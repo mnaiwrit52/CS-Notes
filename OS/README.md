@@ -825,3 +825,16 @@ or not. If no argument is supplied the current year should be assumed.
            echo "$n is not divisible by 11"
    fi
    ```
+- Create one file about you and another file about your best friend. Now print the difference between these two lines. Check these two files are identical or not
+
+   ~$ touch f1.txt f2.txt
+   ~$ cat >> f1.txt
+      I am Sheldon.
+      I am a thoeratical physicist at CalTech.
+      I am currently researching in the field of dark matter.
+   ~$ cat >> f2.txt
+      I am Leonard.
+      I am an experimental physicist at CalTech.
+      I am currently experimenting in the field of lasers.
+   ~$ diff f1.txt f2.txt
+   ~$ diff -s f1.txt f2.txt
