@@ -811,3 +811,17 @@ or not. If no argument is supplied the current year should be assumed.
    echo "List of the name of files starting with a vowel: "
    ls [aAeEiIoOuU]*
    ```
+- Write a shell script to find whether a number is divisible by 11.
+
+   ```powershell
+   #! /bin/bash
+
+   echo "Enter a number :"
+   read n
+   if [ `expr $n % 11` -eq 0 ]
+   then
+           echo "$n is divisible by 11"
+   else
+           echo "$n is not divisible by 11"
+   fi
+   ```
