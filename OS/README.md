@@ -804,7 +804,7 @@ or not. If no argument is supplied the current year should be assumed.
     fi
     ```
 ### Set 2
-- 1. Write a shell script to list the name of files under the current directory that starts with a vowel.
+- Write a shell script to list the name of files under the current directory that starts with a vowel.
 
    ```powershell
    #! /bin/bash
