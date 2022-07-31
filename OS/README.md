@@ -803,3 +803,11 @@ or not. If no argument is supplied the current year should be assumed.
     echo not a leap year
     fi
     ```
+### Set 2
+- 1. Write a shell script to list the name of files under the current directory that starts with a vowel.
+
+   ```powershell
+   #! /bin/bash
+   echo "List of the name of files starting with a vowel: "
+   ls [aAeEiIoOuU]*
+   ```
