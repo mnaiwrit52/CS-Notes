@@ -3,280 +3,280 @@
 ---
 
 - List the names of the users logged in and their total count without displaying any further details
-    
+  
     $ who -q
     
 - Find out your terminal’s device name.
-    
+  
     $ tty
     
 - Display current date in the form dd/mm/yyyy
-    
+  
     $ date +% d/%m/%Y
     
 - Find out your machine’s name and the version of the operating system
-    
+  
     $ uname -nr
     
 - Clear the screen and place the cursor at row 12, column 25
-    
+  
     $ clear
     $ tput cup 12 25
     
 - Find the decimal equivalent of 1101001
-    
+  
     $ bc
     ibase=2
     
 - Find out the users who are idling
-    
+  
     $ who -Hu
     
 - Use man to get help
-    
+  
     $ man tty
     
 - Listing all files and directories and give it as input to more command
-    
+  
     $ ls -l | more
     
 - Use cat, grep, tee and wc command to read the particular entry from user and store in a file and print line count
-    
+  
     $ ls -l | wc –l
     $ cat sample2.txt | head -7 | tail -5
     
 - Ensure that bc displays the results of all divisions using three decimal places
-    
+  
     $ bc
     Scale=3
     
 - To view a single file
-    
+  
     $cat filename
     
 - To view multiple files
-    
+  
     $cat file1 file2
     
 - To view contents of a file preceding with line numbers
-    
+  
     $cat -n filename
     
 - Create a file
-    
+  
     $ cat > newfile
     
 - List all filenames starting with „a‟ or „b‟ or „m‟
-    
+  
     $ ls [abm] *
     
 - List all filenames that end with a digit.
-    
+  
     $ ls * [0-9]
     
 - List all files in the current directory whose second character is a digit
-    
+  
     $ ls ? [0-9]*
     
 - Use command(s) to create a directory in your home directory called KeepOut whose contents can be read only by you
-    
+  
     $ mkdir keepout ; chmod 400 keepout
     
 - List all files beginning with character ‘a’ on the screen and also store them in a file called file1.
-    
+  
     $ ls [a] * | tee file1
     
 - Sort the output of who and display on screen along with total number of users. The same output except the number of users should be stored in a file file1.
-    
+  
     $ who -q | sort ; who -Hu | cat >> file1
     
 - Double space a file
-    
+  
     $ pr -d file1
     
 - Select lines 5 to 10 of a file
-    
+  
     $ head -10 file1 | tail -n -5
     
 - Find the user name and group id from the file /etc/passwd using the cut command.
-    
+  
     $ cut -d “:” -f 1,4 /etc/passwd
     
 - Extract the names of the users from /etc/passwd after ignoring the first 10 entries.
-    
+  
     $ cut -d “:” -f 1 /etc/passwd | tail -n +11
     
 - Sort the file /etc/passwd on GUID (primary) and UID (secondary) so that the users with the same GUID are placed together. User with a lower UID should be placed higher in the list
-    
+  
     $ cut -d “:” -f 3,4 /etc/passwd | sort -n
     
 - List from /etc/passwd the UID and the user having the highest UID.
-    
+  
     $ sort -t “:” -r -n -k 3 /etc/passwd | cut -d “:” -f 1,3 | head -1
     
 - Device a sequence which lists the five largest files in the current directory
-    
+  
     $ ls -lS | head -6
     
 - Remove duplicate lines from a file.
-    
+  
     $ uniq file1
     
 - Count the frequency of occurrences of words in a file.
-    
+  
     $ sort file1 | uniq -c
     
 - Find "long" listing of the smallest 5 files in the /etc directory whose name contains the string ".conf", sorted by increasing file size.
-    
+  
     $ ls -lSr /etc/*.conf | head -5$ who | uniq |sort
     
 - What would you type at the command line to get a sorted list, with no duplicates, of all the users logged into the local network?
-    
+  
     $ who | uniq |sort
     
 - What would you type at the command line to find all files in your home directory that are more than a week old and end with .bak?
-    
+  
     $ find -mtime +7 -name “*.bak” -ls
     
 - What would you type at the command line to find out how many total lines are contained in all the files ending in .c in the current directory, printing only the total number of lines?
-    
+  
     $ wc -l *.c
     
 - $ cat state.txt
-Andhra Pradesh
-Arunachal Pradesh
-Assam Bihar
-Chhattisgarh
+  Andhra Pradesh
+  Arunachal Pradesh
+  Assam Bihar
+  Chhattisgarh
     - $ cut -c 2,5,7 state.txt
-        
+      
         nr rah sm ir hti
         
     - $ cut -c 1- state.txt
-        
+      
         Andhra Pradesh
         Arunachal Pradesh
         Assam Bihar
         Chhattisgarh
         
     - $ cut -c -5 state.txt
-        
+      
         Andhr
         Aruna
         Assam
         Bihar
         Chhat
-        
+  
 - Find the user name and group id from the file /etc/passwd using the cut command
-    
+  
     $ cut -d “:” -f 1,4 /etc/passwd
     
 - Extract the names of the users from /etc/passwd after ignoring the first 10 entries.
-    
+  
     $ cut -d “:” -f 1 /etc/passwd | tail -n +11
     
 - Sort the file /etc/passwd on GUID (primary) and UID (secondary) so that the users with the same GUID are placed together. User with a lower UID should be placed higher in the list.
-    
+  
     $ cut -d “:” -f 3,4 /etc/passwd | sort -n
     
 - List from /etc/passwd the UID and the user having the highest UID.
-    
+  
     $ sort -t “:” -r -n -k 3 /etc/passwd | cut -d “:” -f 1,3 | head -1
     
 - Device a sequence which lists the five largest files in the current directory.
-    
+  
     $ ls -lS | head -6
     
 - Remove duplicate lines from a file.
-    
+  
     $ uniq file1
     
 - Count the frequency of occurrences of words in a file.
-    
+  
     $ sort file1 | uniq -c
     
 - Find "long" listing of the smallest 5 files in the /etc directory whose name contains the string ".conf", sorted by increasing file size.
-    
+  
     $ ls -lSr /etc/*.conf | head -5
     
 - What would you type at the command line to get a sorted list, with no duplicates, of all the users logged into the local network?
-    
+  
     $ who | uniq |sort
     
 - What would you type at the command line to find all files in your home directory that are more than a week old and end with .bak?
-    
+  
     $ find -mtime +7 -name “*.bak” -ls
     
 - What would you type at the command line to find out how many total lines are contained in all the files ending in .c in the current directory, printing only the total number of lines?
-    
+  
     $ wc -l *.c
     
 - Find out the PID of your login shell.
-    
+  
     $ ps
     
 - Remove the header line from the ps output.
-    
+  
     ```powershell
     $ps --no-headers
     ```
     
 - List all processes that you are currently running on your machine, sorted by the command name in alphabetical order. The output should consist only of the processes you are running and nothing else (i.e. if you are running 6 processes, the output should only have 6 lines).
-    
+  
     ```powershell
     ps -e --sort=args
     ```
     
 - Display the files in the current directory that contain the string MCA HITK in either upper- or lowercase
-    
+  
     $ grep -il ‘MCAHITK’ *
     
 - Store in a variable the number of lines containing the word MCA in the files mca1, mca2 and mca3
-    
+  
     $ var=``grep MCA mca[1-3] | wc -l``
     $ echo $var
     
 - If you did not have the wc command, how would you use grep to count the number of users currently using the system?
-    
+  
     who | grep -c “.*”
     
 - Remove blank lines from a file using grep.
-    
+  
     $ grep -v “^$” aa1
     
 - List the ordinary files in your current directory that are not writable by the owner.
-    
+  
     $ ls -l | grep -v ‘^..w’
     
 - Locate lines ending and beginning with a dot and containing anything between them.
-    
+  
     $ grep ‘^\..*\.$’ mca4
     
 - Locate lines that are less than 100 characters in length
-    
+  
     $ grep ‘^.\{0,99\}$’ * file1
     
 - Match all lines that start with ‘hello’. E.g: “hello there”
-    
+  
     $ grep “^hello” file1
     
 - Match all lines that end with ‘done’. E.g: “well done”
-    
+  
     $ grep “done$” file1
     
 - Match all lines that contain any of the letters ‘a’, ‘b’, ‘c’, ‘d’ or ‘e’.
-    
+  
     $ grep “[a-e]”
     
 - Match all lines that do not contain a vowel
-    
+  
     $ grep “[^aeiou]” file1
     
 - Match all lines that start with a digit following zero or more spaces. E.g: “ 1.” or “2.”
-    
+  
     $ grep “ *[0-9]” file1
     
 - Match all lines that contain the word hello in upper-case or lower-case
-    
+  
     $ grep -i “hello”
     
 
@@ -285,7 +285,7 @@ Chhattisgarh
 ### Shell Script
 
 - Write a shell script to calculate addition of two numbers
-    
+  
     clear
     echo -n "Enter 1st number: "
     read first_number
@@ -297,7 +297,7 @@ Chhattisgarh
     echo "Sum of $first_number and $second_number: "$sum
     
 - Write a shell script to show the maximum of three numbers.
-    
+  
     ```
     #shell script to find the greatest of three numbers
     
@@ -317,7 +317,7 @@ Chhattisgarh
     ```
     
 - Write a shell script which displays the result of division of one integer by another integer and informs if the user tries to divide an integer by 0.
-    
+  
     ```powershell
     #!/bin/sh
     ## Shell script of dividing two number
@@ -342,9 +342,9 @@ Chhattisgarh
     ```
     
 - Rajesh’s basic salary (BASIC) is input through the keyboard. His dearness allowance (DA) is 52% of BASIC. House rent allowance (HRA) is 15% of BASIC. Contributory provident fund is 12% of (BASIC + DA). Write a shell script to calculate his gross salary and take home salary using the following formula:
-Gross salary = BASIC + DA + HRA 
-Take home salary = Gross salary - (BASIC + DA) * 0.12
-    
+  Gross salary = BASIC + DA + HRA 
+  Take home salary = Gross salary - (BASIC + DA) * 0.12
+  
     ```bash
     echo "Please enter Basic Salary"
     read basic
@@ -357,10 +357,10 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     THS = $grossSalary-($basic+$DA)\*0.2
     echo "Take Home Salary: $THS"
     ```
-    
+  
 - Write a shell script that produces a shell calculator to perform the following operations:
- Addition  Subtraction  Multiplication  Division
-    
+   Addition  Subtraction  Multiplication  Division
+  
     ```bash
     # !/bin/bash
     # Take user Input
@@ -382,9 +382,9 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     esac
     echo "Result : $res"
     ```
-    
+  
 - Write a shell script that displays a list of all files in the current directory to which you have read write and execute permissions.
-    
+  
     ```powershell
     #! /bin/sh
     #Purpose: To display list of files in current directory to which owner have read, write and execute permission.
@@ -399,7 +399,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script that lists files by modification time when called with lm and by access time when called with la. By default, the script should show the listing of all files in the current directory
-    
+  
     #! /bin/sh
     # Purpose: To list the files according to modification or access time depending on the arguments in command line.
     # USAGE: sh filelist .sh lm(for modification time) or la (last access time)
@@ -411,7 +411,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     #end of script
     
 - Write a shell script to display the files created or updated within fourteen days from the current date
-    
+  
     #! /bin/sh
     # Purpose: To list the files created or updated within fourteen days from current date.
     # USAGE: sh [filecreat14.sh](http://filecreat14.sh/) (no arguments required)
@@ -419,7 +419,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     #end of script
     
 - Develop a shell script that displays all files with all attributes those have been created or modified in the month of November
-    
+  
     ```powershell
     #! /bin/sh
     #Purpose: To list those files created or updated in month of November.
@@ -435,7 +435,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to check if a given file (filename supplied as command line argument) is a regular file or not and find the total number of words, characters and lines in it.
-    
+  
     ```powershell
     file="$1"
     w=`cat $file | wc -w`
@@ -447,7 +447,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to check whether the given file is a blank file or not. If not found blank then display the contents of the file
-    
+  
     ```powershell
     if [ -s /tmp/myfile.txt ]
     then
@@ -459,7 +459,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to concatenate two files and count the number of characters, number of words and number of lines in the resultant file.
-    
+  
     ```powershell
     #!/bin/bash
     echo Enter the filenames
@@ -474,7 +474,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script, which gets executed the moment a user logs in. It should display the message “GOOD MORNING” or “GOOD AFTERNOON” or “GOOD EVENING” depending upon the time at which the user logs in.
-    
+  
     ```powershell
     hour=$(date +"%H")
     if [ $hour -ge 0 -a $hour -lt 12 ]
@@ -490,7 +490,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script, which reports names and sizes of all files in a directory (directory should be supplied as an argument to the shell script) whose size exceeds 100 bytes. The filenames should be printed in decreasing order of their sizes. The total number of such files should also be reported.
-    
+  
     #! /bin/sh 
     #Purpose: To print the name of all files in a directory whose size exceeds 100 bytes alongwith total number of such files. 
     # USAGE: sh [file100byte.sh](http://file100byte.sh/) directoryname
@@ -505,7 +505,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     #end of script
     
 - Write a shell script to list the name of files under the current directory that starts with a vowel
-    
+  
     #! /bin/sh 
     #Purpose: To list the files starting with a vowel. 
     # USAGE : sh [filevowel.sh](http://filevowel.sh/) (no arguments required)
@@ -514,7 +514,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     #end of script 
     
 - Write a shell script which receives two filenames as arguments and checks whether the two file‟s contents are same or not. If they are same then the second file should be deleted
-    
+  
     #! /bin/sh 
     #Purpose: To compare two files and delete the second file if they are equal. 
     # USAGE: sh [filecomparedel.sh](http://filecomparedel.sh/) file1 file2
@@ -533,7 +533,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     #end of script
     
 - A file called list consists of several words. Write a shell script which will receive a list of filenames, the first of which would be list. The shell script should report all occurrences of each word in list in the rest of the files supplied as arguments
-    
+  
     ```bash
     if [ $# -eq 0 ]
     then
@@ -560,7 +560,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script which deletes all lines containing the word UNIX in the files supplied as arguments to this shell script.
-    
+  
     ```powershell
     #! /bin/sh
     #Purpose: To delete the lines containing the word UNIX in the file supplied.
@@ -579,7 +579,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to display the list of users as well as the users connected to the system
-    
+  
     ```bash
     #! /bin/bash
     
@@ -604,7 +604,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script which counts the number of consonants and vowels in a given sentence.
-    
+  
     ```bash
     #!/bin/sh
     
@@ -618,7 +618,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to test whether a given string is palindrome or not.
-    
+  
     ```bash
     echo "Input the string without space"
     read str
@@ -638,7 +638,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to print the following pattern for any number of lines
-    
+  
     ```bash
     p=5;
      
@@ -663,7 +663,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to find whether a number is divisible by 11
-    
+  
     ```bash
     #!/bin/bash
     echo "Enter any Number"
@@ -678,7 +678,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to check whether a given number is prime or not
-    
+  
     ```bash
     echo "enter number"
     read num
@@ -699,7 +699,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell program that takes a number from user and prints the reverse of the number.
-    
+  
     ```bash
     echo enter n
     read n
@@ -715,7 +715,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to find the factorial value of any integer entered through the keyboard.
-    
+  
     ```
     echo "Enter a number"
     read num
@@ -729,7 +729,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to generate all combinations of 1, 2 and 3
-    
+  
     ```bash
     clear
     for i in 1 2 3
@@ -745,7 +745,7 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to print all prime numbers in a given range.
-    
+  
     ```bash
     echo enter m and n
     read m n
@@ -768,8 +768,8 @@ Take home salary = Gross salary - (BASIC + DA) * 0.12
     ```
     
 - Write a shell script to find out whether an integer input through the keyboard is an odd
-number or an even number
-    
+  number or an even number
+  
     ```bash
     clear 
     echo "---- EVEN OR ODD IN SHELL SCRIPT -----"
@@ -783,10 +783,10 @@ number or an even number
     	echo "$n is Odd"
     fi
     ```
-    
+  
 - Write a shell script to find out whether any year input through the keyboard is a leap year
-or not. If no argument is supplied the current year should be assumed.
-    
+  or not. If no argument is supplied the current year should be assumed.
+  
     ```powershell
     leap=$(date +"%Y")
     echo taking year as $leap
@@ -815,7 +815,7 @@ or not. If no argument is supplied the current year should be assumed.
 
    ```powershell
    #! /bin/bash
-
+   
    echo "Enter a number :"
    read n
    if [ `expr $n % 11` -eq 0 ]
@@ -838,3 +838,202 @@ or not. If no argument is supplied the current year should be assumed.
       I am currently experimenting in the field of lasers.
    ~$ diff f1.txt f2.txt
    ~$ diff -s f1.txt f2.txt
+
+### Set 4
+
+i) Create 2 files:
+
+Touch command to create multiple files: Touch command can be used to create the multiple numbers of files at the same time. These files would be empty while creation.
+
+Syntax: touch File1_name File2_name File3_name 
+
+ii) Display the contents of both the files
+
+Syntax: cat myFile.txt
+
+iii) Count the number of charecters in both the files
+
+Syntax: wc OPTION... [FILE]...
+wc /proc/cpuinfo 
+
+The output will look something like the following:
+448 3632 22226 /proc/cpuinfo
+
+448 is the number of lines.
+3632 is the number of words.
+22226 is the number of characters.
+
+iv) Rename two files
+
+mv prev_name.txt new_name.txt
+
+v) Combine the 2 files without duplicate
+
+grep -v -f file1 fil2
+
+b. 
+
+echo enter n
+read n
+num=0
+while [ $n -gt 0 ]
+do
+num=$(expr $num \* 10)
+k=$(expr $n % 10)
+num=$(expr $num + $k)
+n=$(expr $n / 10)
+done
+echo number is $num
+
+Output:
+$ enter n
+$ 456
+$ number is 654
+
+d.
+
+#!/bin/bash
+echo "enter maximum number"
+read n
+# taking input from user
+echo "enter  Numbers in array:"
+for (( i = 0; i < $n; i++ ))
+do
+read nos[$i]
+done
+
+# Now do the Sorting of numbers
+for (( i = 0; i < $n ; i++ ))
+do
+for (( j = $i; j < $n; j++ ))
+do
+if [ ${nos[$i]} -lt ${nos[$j]}  ]; then
+t=${nos[$i]}
+nos[$i]=${nos[$j]}
+nos[$j]=$t
+fi
+done
+done
+# Printing the sorted number in descending order
+echo -e "\nSorted Numbers "
+for (( i=0; i < $n; i++ ))
+do
+echo ${nos[$i]}
+done
+
+Output:
+enter maximum number
+6
+Enter numbers in array:
+4
+9
+1
+2
+3
+7
+
+Sorted Numbers
+9
+7
+4
+3
+2
+1
+
+
+
+### Set 9
+
+a. i) Create a file
+
+cat > newfilename (Create and edit new file)
+
+a. ii) Display line numbers of a file
+
+wc -l filename
+
+a. iii) Display file content with line number
+
+nl filename 
+
+a. iv) Update the file content with I/O redirection
+
+The simplest case to demonstrate this is basic output redirection. The output redirection operator is the > (greater than) symbol, and the general syntax looks as follows:
+
+  $ command > output_file_spec
+
+The ability also exists to redirect the standard input using the input redirection operator, the < (less than) symbol. Note the point of the operator implies the direction. The general syntax of input redirection looks as follows:
+
+  $ command < input_file_spec
+
+a. v) Rename the file
+
+To change the name of a file, use the following command format (where thirdfile and file3 are sample file names)
+
+b. echo "enter the salary"
+read basic_salary
+if [ $basic_salary -ge 0 ]
+then
+     basic=$(expr 1.0*"$basic_salary" | bc)
+     echo "basic is $basic"
+     da=$(expr 0.52*"$basic" | bc)
+     echo "da is $da"
+     hr=$(expr 0.15*"$basic" | bc)
+     echo "hr is $hr"
+     temp=$(expr "$basic"+"$da" | bc)
+     echo " temp is $temp"
+     pa=$(expr 0.12*"$temp" | bc)
+     echo "pa is $pa"
+     gs=$(expr "$basic"+"$da"+"$hr" | bc)
+     echo "gs is $gs"
+     ths=$(expr "$gs"-"$pa" | bc )
+      echo "take home salary is $ths"
+ else
+
+
+         echo "not correct"
+
+fi
+
+c. 
+
+echo "Enter Number 1"
+
+read n1
+
+echo "Enter number 2"
+
+read n2
+
+echo "Enter number 3"
+
+read n3
+
+if [\$n1 -gt \$ n2] && [\$n1 -gt \$n2]
+
+then
+
+​	echo $n1
+
+elif [\$n2 -gt \$n3 ]
+
+then
+
+​	echo $n2
+
+else
+
+​	echo $n3
+
+fi
+
+d.
+
+echo "Enter filename: "
+
+read fname
+
+wc -w $fname
+
+wc -c $fname
+
